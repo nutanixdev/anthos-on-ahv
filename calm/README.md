@@ -1,21 +1,18 @@
 # Google Anthos on Nutanix AHV
 
-
 ## What to expect
 
 With this folder you can generate a Calm blueprint using DSL or just upload the compiled blueprint in JSON format directly into Calm.
-
 
 ## Overview
 
 This automation project helps you to deploy an Anthos Kubernetes cluster on Nutanix AHV. The characteristics for the Kubernetes cluster are:
 
-
 * Anthos version: bare metal
 
-    * Supported [1.6.1](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/concepts/about-bare-metal)
-    
-    * Unsupported [1.7.0](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.7/concepts/about-bare-metal)
+  * Supported [1.6.1](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/concepts/about-bare-metal)
+
+  * Unsupported [1.7.0](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.7/concepts/about-bare-metal)
 
 * Type: hybrid - <https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/installing/install-prep#hybrid_cluster_deployment>
 
@@ -26,7 +23,6 @@ This automation project helps you to deploy an Anthos Kubernetes cluster on Nuta
     * 3 x Control plane
 
     * 2 x Worker nodes
-
 
 * Virtual machine OS: CentOS 8 GenericCloud - <https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-GenericCloud-8.2.2004-20200611.2.x86_64.qcow2>
 
@@ -136,7 +132,6 @@ This method is for using the *blueprint.json* file in the main directory.
 5. Default Application Profile variables
 
     Configure the [launch variables](##variables) values accordingly to your environment. There are a few of them that are privates, runtime disabled, that most of the time are static and doesn't need changes. You can always make them available at launch checking the runtime icon if you need to deliver more flexibility to the user. 
-
 
 6. Save the blueprint and launch. The complete deployment process takes about an hour. 
 
