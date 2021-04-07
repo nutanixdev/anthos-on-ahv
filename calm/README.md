@@ -114,7 +114,7 @@ If you want to compile this blueprint using Calm DSL move to [Using DSL](##using
 
 ## Using Blueprint
 
-This method is for using the *blueprint.json* file in the main directory. 
+This method is for using the *blueprint.json* file in the main directory.
 
 1. Save the [blueprint](https://raw.githubusercontent.com/pipoe2h/calm-dsl/anthos-on-ahv/blueprints/anthos-on-ahv/blueprint.json) in your computer. You can right-click the link, and choose *Save Link As...*
 
@@ -132,9 +132,9 @@ This method is for using the *blueprint.json* file in the main directory.
 
 5. Default Application Profile variables
 
-    Configure the [launch variables](##variables) values accordingly to your environment. There are a few of them that are privates, runtime disabled, that most of the time are static and doesn't need changes. You can always make them available at launch checking the runtime icon if you need to deliver more flexibility to the user. 
+    Configure the [launch variables](##variables) values accordingly to your environment. There are a few of them that are privates, runtime disabled, that most of the time are static and doesn't need changes. You can always make them available at launch checking the runtime icon if you need to deliver more flexibility to the user.
 
-6. Save the blueprint and launch. The complete deployment process takes about an hour. 
+6. Save the blueprint and launch. The complete deployment process takes about an hour.
 
 7. Once deployed, the cluster is registered in Anthos but GKE is not logged in until you use the token for the service account created in Kubernetes. SSH into the *Admin virtual machine* and run the following commands (you will need to grab the KUBECONFIG from the admin virtual machine). Copy the token and use it in the GKE console (the service account name may vary depending if you changed the default value):
 
@@ -148,15 +148,15 @@ This method is for using the *blueprint.json* file in the main directory.
 For DSL you must clone the repository and use the branch *anthos-on-ahv*. Also, make sure your DSL is initialized beforehand, if you need help with this refer to this [post series](https://www.nutanix.dev/calm-dsl)
 
 ```terminal
-$ git clone https://github.com/pipoe2h/calm-dsl.git
+git clone https://github.com/pipoe2h/calm-dsl.git
 
-$ git checkout anthos-on-ahv
+git checkout anthos-on-ahv
 ```
 
 1. Move to blueprint directory
 
     ```terminal
-    $ cd calm-dsl/blueprints/anthos-on-ahv
+    cd calm-dsl/blueprints/anthos-on-ahv
     ```
 
 2. Create the required credentials
@@ -167,7 +167,7 @@ $ git checkout anthos-on-ahv
     # GCP Service Account
     $ echo "name@project..iam.gserviceaccount.com" > .local/secrets/gcloud_account
     $ echo """{
-        JSON payload 
+        JSON payload
     }""" > .local/secrets/gcloud_key
 
     # Linux OS username and SSH private key
@@ -184,19 +184,19 @@ $ git checkout anthos-on-ahv
 3. (Optional) Update default values for [launch variables](##variables). You can find the variables in *class Default(Profile):* section
 
     ```terminal
-    $ vi blueprint.py
+    vi blueprint.py
     ```
 
 4. Create blueprint
 
     ```terminal
-    $ calm create bp blueprint.py
+    calm create bp blueprint.py
     ```
 
-5. Launch it. The complete deployment process takes about an hour. 
+5. Launch it. The complete deployment process takes about an hour.
 
     ```terminal
-    $ calm create app -f blueprint.py
+    calm create app -f blueprint.py
     ```
 
 6. Once deployed, the cluster is registered in Anthos but GKE is not logged in until you use the token for the service account created in Kubernetes. From your computer terminal run the following commands copying the token and using it in the GKE console (the service account name may vary depending if you changed the default value):
