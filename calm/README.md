@@ -132,7 +132,7 @@ This method is for using the *blueprint.json* file in the main directory.
 
 5. Default Application Profile variables
 
-    Configure the [launch variables](##variables) values accordingly to your environment. There are a few of them that are privates, runtime disabled, that most of the time are static and doesn't need changes. You can always make them available at launch checking the runtime icon if you need to deliver more flexibility to the user.
+    Configure the [launch variables](#variables) values accordingly to your environment. There are a few of them that are privates, runtime disabled, that most of the time are static and doesn't need changes. You can always make them available at launch checking the runtime icon if you need to deliver more flexibility to the user.
 
 6. Save the blueprint and launch. The complete deployment process takes about an hour.
 
