@@ -1,0 +1,38 @@
+# https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/installing/hardware
+resources:
+  disk_list:
+  - data_source_reference:
+      kind: image
+    disk_size_mib: 131072 # Minimum 128 GB / recommended 256 GB
+    device_properties:
+      device_type: DISK
+      disk_address:
+        adapter_type: PCI
+        device_index: 0
+  memory_size_mib: 32768 # Minimum 32 GB / recommended 64 GB
+  num_sockets: 4 # Minimum 4 / recommended 8
+  num_vcpus_per_socket: 1
+  boot_config:
+    boot_device:
+      disk_address:
+        adapter_type: PCI
+        device_index: 0
+  guest_customization:
+    cloud_init:
+      user_data: |-
+        #cloud-config
+        hostname: @@{name}@@
+        users:
+            - name: @@{CRED_OS.username}@@
+              ssh-authorized-keys:
+                - @@{CRED_OS.public_key}@@
+              sudo: ['ALL=(ALL) NOPASSWD:ALL']
+        runcmd:
+            - yum install -y lvm2
+  nic_list:
+  - network_function_nic_type: INGRESS
+    nic_type: NORMAL_NIC
+    subnet_reference:
+      kind: subnet
+      name: dnd-demo
+      uuid: 92b02b9e-b316-4503-94fb-a90bf3fede8b

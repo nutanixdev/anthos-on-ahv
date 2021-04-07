@@ -1,0 +1,9 @@
+image:
+  name: AHV_CENTOS_82
+  type: DISK_IMAGE
+  source: https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-GenericCloud-8.2.2004-20200611.2.x86_64.qcow2 
+  architecture: X86_64
+
+product:
+  name: AHV_CENTOS_82
+  version: 8.2.2004-20200611.2

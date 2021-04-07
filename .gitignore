@@ -1,0 +1,27 @@
+# Terraform
+**/*.tfvars
+**/*.log
+**/*.tfstate
+**/*.tfstate.backup
+**/.terraform
+**/.DS_Store
+**/.terraform.tfstate.lock.info
+**/*id_rsa*
+**/org_scripts
+**/*.txt
+!requirements.txt
+**/go.mod
+**/go.sum
+
+# Calm
+**/variables.py
+**/.calm
+**/.local
+**/__pycache__
+
+# Kubernetes
+**/gke/
+**/*kubeconfig
+
+# Visual Studio Code
+**/.vscode

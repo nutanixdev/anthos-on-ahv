@@ -1,0 +1,27 @@
+stages:
+  - build
+  - test
+
+.pre_test_script:
+  script:
+    - apk add go
+    - go version
+    - mkdir -p ~/.gke_cred
+    - cp $GKE_CREDS ~/.gke_cred/gitlab.json
+    - cd terraform
+    - cp $TFVARS terraform.tfvars
+    - cd test
+    - go mod init github.com/yannickstruyf3/terraform-ahv-anthos
+    - echo "Will be running $TESTFILTER"
+    - go test -v -timeout 0  --run "$TESTFILTER"
+
+test_anthos:
+  stage: test
+  variables:
+    TESTFILTER: "TestTerraform_"
+  extends: .pre_test_script
+  environment:
+    name: production
+  image:
+    name: hashicorp/terraform:0.13.6
+    entrypoint: [""]
