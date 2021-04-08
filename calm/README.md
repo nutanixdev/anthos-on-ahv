@@ -2,11 +2,11 @@
 
 ## What to expect
 
-With this folder you can generate a Calm blueprint using DSL or just upload the compiled blueprint in JSON format directly into Calm.
+With this folder you can generate a Calm blueprint using DSL or just upload a compiled blueprint in JSON format directly into Calm.
 
 ## Getting Started
 
-This blueprint has been developed using Calm DSL to provide Infrastructure as Code. If you are not familiar with DSL, you can learn with this [post series](https://www.nutanix.dev/calm-dsl). There is no need for you to use DSL, you can just upload the JSON file in the main directory.
+This blueprint has been developed using Calm DSL to provide Infrastructure as Code. If you are not familiar with DSL, you can learn with this [post series](https://www.nutanix.dev/calm-dsl). There is no need for you to use DSL, you can just upload the JSON file linked in the following section.
 
 If you want to compile this blueprint using Calm DSL move to [Using DSL](#using-dsl), otherwise, continue reading to use the blueprint option.
 
