@@ -426,6 +426,9 @@ class Default(Profile):
     ANTHOS_CLUSTER_NAME = Variable.Simple.string(
         "@@{calm_application_name}@@",
         name="ANTHOS_CLUSTER_NAME",
+        description="Name must start with a lowercase letter followed by up to 39 lowercase letters, numbers, or hyphens, and cannot end with a hyphen. Name is permanent and unique",
+        regex="^[a-z](?:[a-z0-9-]*[a-z0-9])?$",
+        validate_regex=True,
         label="Anthos cluster name",
         is_mandatory=True,
         runtime=True,
