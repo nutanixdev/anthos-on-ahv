@@ -79,6 +79,10 @@ git checkout anthos-on-ahv
     # Prism Element credential with User Admin role
     echo "service_account" > .local/secrets/pe_username
     echo "password" > .local/secrets/pe_password
+
+    # Prism Central credential with Create/Update VM role
+    echo "service_account" > .local/secrets/pc_username
+    echo "password" > .local/secrets/pc_password
     ```
 
 3. (Optional) Update default values for [launch variables](##variables). You can find the variables in *class Default(Profile):* section
