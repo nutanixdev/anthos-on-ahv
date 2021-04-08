@@ -8,13 +8,13 @@ With this folder you can generate a Calm blueprint using DSL or just upload the 
 
 This blueprint has been developed using Calm DSL to provide Infrastructure as Code. If you are not familiar with DSL, you can learn with this [post series](https://www.nutanix.dev/calm-dsl). There is no need for you to use DSL, you can just upload the JSON file in the main directory.
 
-If you want to compile this blueprint using Calm DSL move to [Using DSL](##using-dsl), otherwise, continue reading to use the blueprint option.
+If you want to compile this blueprint using Calm DSL move to [Using DSL](#using-dsl), otherwise, continue reading to use the blueprint option.
 
 ## Using Blueprint
 
-This method is for using the *blueprint.json* file in the main directory.
+This method is for using the *blueprint.json* file available in the [Calm community repo](https://github.com/nutanix/blueprints)
 
-1. Save the [blueprint](https://raw.githubusercontent.com/nutanix/blueprints/anthos-on-ahv/blueprint.json) in your computer. You can right-click the link, and choose *Save Link As...*
+1. Save the [blueprint](https://raw.githubusercontent.com/nutanix/blueprints/master/anthos-on-ahv/blueprint.json) in your computer. You can right-click the link, and choose *Save Link As...*
 
 2. Upload the blueprint into Calm
 
@@ -62,23 +62,23 @@ git checkout anthos-on-ahv
 2. Create the required credentials
 
     ```terminal
-    $ mkdir -p .local/secrets
+    mkdir -p .local/secrets
 
     # GCP Service Account
-    $ echo "name@project..iam.gserviceaccount.com" > .local/secrets/gcloud_account
-    $ echo """{
+    echo "name@project..iam.gserviceaccount.com" > .local/secrets/gcloud_account
+    echo """{
         JSON payload
     }""" > .local/secrets/gcloud_key
 
     # Linux OS username and SSH private key
-    $ echo "nutanix" > .local/secrets/os_username
-    $ echo """---BEGIN RSA PRIVATE KEY---
+    echo "nutanix" > .local/secrets/os_username
+    echo """---BEGIN RSA PRIVATE KEY---
         KEY payload
     ---""" > .local/secrets/os_key
 
     # Prism Element credential with User Admin role
-    $ echo "service_account" > .local/secrets/pe_username
-    $ echo "password" > .local/secrets/pe_password
+    echo "service_account" > .local/secrets/pe_username
+    echo "password" > .local/secrets/pe_password
     ```
 
 3. (Optional) Update default values for [launch variables](##variables). You can find the variables in *class Default(Profile):* section
