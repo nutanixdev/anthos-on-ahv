@@ -18,6 +18,7 @@
 **/.calm
 **/.local
 **/__pycache__
+**/blueprint.json
 
 # Kubernetes
 **/gke/

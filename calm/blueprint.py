@@ -412,13 +412,15 @@ class Default(Profile):
         runtime=True,
     )
 
-    ANTHOS_VERSION = Variable.WithOptions.Predefined.string(
-        ["1.6.1", "1.6.2", "1.7.0"],
-        default="1.6.1",
+    ANTHOS_VERSION = Variable.Simple.string(
+        "1.6.2",
         name="ANTHOS_VERSION",
+        description="The only supported versions are 1.6.x, 1.7.0 is not supported yet but can be tested.",
+        regex="^(\\d+\\.)?(\\d+\\.)?(\\*|\\d+)$",
+        validate_regex=True,
         label="Anthos cluster version",
         is_mandatory=True,
-        runtime=True,
+        runtime=True
     )
 
     ANTHOS_CLUSTER_NAME = Variable.Simple.string(
@@ -530,14 +532,15 @@ class Default(Profile):
     @action
     def UpgradeCluster():
         """This action will upgrade the Anthos cluster to a new version"""
-        ANTHOS_VERSION = Variable.WithOptions.Predefined.string(
-            ["1.6.2", "1.7.0"],
-            default="1.6.2",
+        ANTHOS_VERSION = Variable.Simple.string(
+            "",
             name="ANTHOS_VERSION",
-            description="The available versions are not supported yet but they can be tested.",
+            description="The only supported versions are 1.6.x, 1.7.0 is not supported yet but can be tested.",
+            regex="^(\\d+\\.)?(\\d+\\.)?(\\*|\\d+)$",
+            validate_regex=True,
             label="Anthos cluster version",
             is_mandatory=True,
-            runtime=True,
+            runtime=True
         )
 
         AdminVM.Source_Variables(name="Source_Variables")
