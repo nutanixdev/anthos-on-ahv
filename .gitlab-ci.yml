@@ -11,7 +11,7 @@ stages:
     - cd terraform
     - cp $TFVARS terraform.tfvars
     - cd test
-    - go mod init github.com/yannickstruyf3/terraform-ahv-anthos
+    - go mod init github.com/nutanixdev/anthos-on-ahv
     - echo "Will be running $TESTFILTER"
     - go test -v -timeout 0  --run "$TESTFILTER"
 
