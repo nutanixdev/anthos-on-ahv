@@ -8,29 +8,29 @@ This repo provides two automation methods for deploying Anthos clusters on AHV. 
 
 The characteristics for the Kubernetes cluster are:
 
-* Anthos model: bare metal
+* Anthos model: [bare metal](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/concepts/about-bare-metal)
 
 * Anthos versions:
 
-  * Supported [1.6.x](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/concepts/about-bare-metal)
+  * Supported: [1.6.x](https://cloud.google.com/anthos/docs/resources/partner-platforms#nutanix)
 
-  * Unsupported [1.7.0](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.7/concepts/about-bare-metal)
+  * Unsupported: 1.7.0
 
 * Type: hybrid - <https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/installing/install-prep#hybrid_cluster_deployment>
 
 * Number of virtual machines: 6 (Total resources: 24 vCPU / 192 GB memory / 768 GB storage )
 
-  * 1 x Admin
+  * 1 x Admin workstation
 
   * 3 x Control plane
 
   * 2 x Worker nodes
 
-* Virtual machine OS: CentOS 8 GenericCloud - <https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-GenericCloud-8.2.2004-20200611.2.x86_64.qcow2>
+* Virtual machine OS: CentOS 8.2 GenericCloud - <https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-GenericCloud-8.2.2004-20200611.2.x86_64.qcow2>
 
 * High availability: yes
 
-* Load balancing: yes (bundled)
+* Load balancing: yes ([bundled](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/installing/load-balance))
 
 * Ingress: yes
 
