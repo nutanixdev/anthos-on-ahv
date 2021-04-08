@@ -44,6 +44,10 @@ This automation project helps you to deploy an Anthos Kubernetes cluster on Nuta
 
 * Scale Out/In: yes
 
+* Upgrade Anthos version: yes
+
+* Decommission Anthos cluster: yes
+
 ## Prerequisites
 
 * Nutanix:
@@ -116,7 +120,7 @@ If you want to compile this blueprint using Calm DSL move to [Using DSL](##using
 
 This method is for using the *blueprint.json* file in the main directory.
 
-1. Save the [blueprint](https://raw.githubusercontent.com/pipoe2h/calm-dsl/anthos-on-ahv/blueprints/anthos-on-ahv/blueprint.json) in your computer. You can right-click the link, and choose *Save Link As...*
+1. Save the [blueprint](https://raw.githubusercontent.com/nutanix/blueprints/anthos-on-ahv/blueprint.json) in your computer. You can right-click the link, and choose *Save Link As...*
 
 2. Upload the blueprint into Calm
 
@@ -128,7 +132,9 @@ This method is for using the *blueprint.json* file in the main directory.
 
     * CRED_PE: Configure username and password with a user that has *User Admin* role in the Prism Element cluster that will provide persistent storage
 
-    * CRED_GCLOUD: This is the GCP Service Account name you have created with the format *`name`*@*`project`*.iam.gserviceaccount.com. Upload the JSON key that was generated as part of the GCP service account creation.
+    * CRED_PC: Configure username and password with a user that has *Create/Update VM* role in the Prism Central instance responsible for the virtual machines. This is required to expand the virtual disk via API
+
+    * CRED_GCLOUD: This is the GCP Service Account name you have created with the format *`name`*@*`project`*.iam.gserviceaccount.com. Upload the JSON key that was generated as part of the GCP service account creation
 
 5. Default Application Profile variables
 
@@ -148,7 +154,7 @@ This method is for using the *blueprint.json* file in the main directory.
 For DSL you must clone the repository and use the branch *anthos-on-ahv*. Also, make sure your DSL is initialized beforehand, if you need help with this refer to this [post series](https://www.nutanix.dev/calm-dsl)
 
 ```terminal
-git clone https://github.com/pipoe2h/calm-dsl.git
+git clone https://github.com/nutanixdev/anthos-on-ahv.git
 
 git checkout anthos-on-ahv
 ```
