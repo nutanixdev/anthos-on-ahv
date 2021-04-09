@@ -4,6 +4,13 @@
 
 With this folder you can generate a Calm blueprint using DSL or just upload a compiled blueprint in JSON format directly into Calm.
 
+## Prerequisites
+
+* Calm:
+
+  * 3.0.0.2 or later 
+  * A project with AHV account
+
 ## Getting Started
 
 This blueprint has been developed using Calm DSL to provide Infrastructure as Code. If you are not familiar with DSL, you can learn with this [post series](https://www.nutanix.dev/calm-dsl). There is no need for you to use DSL, you can just upload the JSON file linked in the following section.
@@ -136,7 +143,7 @@ git checkout anthos-on-ahv
 
 * ANTHOS_CLUSTER_NAME: Anthos cluster name. By default is set to Calm application name `@@{calm_application_name}@@`
 
-* ANTHOS_VERSION: Anthos cluster version. Supported: 1.6.1 (default) - Unsupported: 1.6.2, 1.7.0
+* ANTHOS_VERSION: Anthos cluster version. Supported: 1.6.x (default 1.6.2) - Unsupported: 1.7.0
 
 * ANTHOS_SERVICES_NETWORK: This is the network for your services. Preferably do not overlap with other networks. CIDR format: XXX.XXX.XXX.XXX/XX
 

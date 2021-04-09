@@ -1,11 +1,15 @@
 variable anthos_version {
   type        = string
   description = "Anthos cluster version"
-  default     = "1.6.1"
+  default     = "1.6.2"
 }
 variable anthos_cluster_name {
   type        = string
   description = "Anthos cluster name"
+  validation {
+    condition     = can(regex("^[a-z](?:[a-z0-9-]*[a-z0-9])?$", var.anthos_cluster_name))
+    error_message = "Invalid cluster name. Name must start with a lowercase letter followed by up to 39 lowercase letters, numbers, or hyphens, and cannot end with a hyphen."
+  }
 }
 
 variable anthos_controlplane_vip {
