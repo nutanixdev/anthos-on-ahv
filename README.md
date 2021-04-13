@@ -111,35 +111,18 @@ The characteristics for the Kubernetes cluster are:
 | Calm | Terraform | Description |
 | --- | --- | --- |
 | NTNX_PC_IP | n/a | If you are using a remote Prism Central instance, use the IP address of that instance. This is used to expand the OS disk via PC API |
-
-* NTNX_PC_IP: If you are using a remote Prism Central instance, use the IP address of that instance. This is used to expand the OS disk via PC API
-
-* OS_DISK_SIZE: The minimum OS disk size MUST be 128GB, recommended by Google is 256GB
-
-* NTNX_CSI_URL: Nutanix CSI Driver URL. Minimum supported version is 2.3.1
-
-* NTNX_PE_IP: The Prism Element VIP address is needed for the CSI plugin to create persistent volumes via the API. This VIP doesn't have to be the one where the Anthos cluster will run. You can choose any VIP of any of your clusters from where you want to get persistent storage
-
-* NTNX_PE_PORT: Prism Element port. Default is *9440*
-
-* NTNX_PE_DATASERVICE_IP: Data service is required to allow iSCSI connectivity between the Kubernetes pods and the volumes created by CSI plugin
-
-* NTNX_PE_STORAGE_CONTAINER: This is the Nutanix Storage Container where the requested Persistent Volume Claims will get their volumes created. You can enable things like compression and deduplication in a Storage Container. The recommendation is to create at least one storage container in Prism Element well identified for Kubernetes usage. This will facilitate the search of persistent volumes when the environment scales
-
-* ANTHOS_CLUSTER_NAME: Anthos cluster name. By default is set to Calm application name `@@{calm_application_name}@@`
-
-* ANTHOS_VERSION: Anthos cluster version. Supported: 1.6.x (default 1.6.2) - Unsupported: 1.7.0
-
-* ANTHOS_SERVICES_NETWORK: This is the network for your services. Preferably do not overlap with other networks. CIDR format: XXX.XXX.XXX.XXX/XX
-
-* ANTHOS_PODS_NETWORK: This is the network for your pods. Preferably do not overlap with other networks. CIDR format: XXX.XXX.XXX.XXX/XX
-
-* ANTHOS_CONTROLPLANE_VIP: This is the IP address for Kubernetes API. Format: XXX.XXX.XXX.XXX
-
-* ANTHOS_INGRESS_VIP: This is the IP address for Kubernetes Ingress. This address MUST be within the load balancing pool. Format: XXX.XXX.XXX.XXX
-
-* ANTHOS_LB_ADDRESSPOOL: This is the IP address range for Load Balancing. Format: XXX.XXX.XXX.XXX-YYY.YYY.YYY.YYY
-
-* KUBERNETES_SERVICE_ACCOUNT: This K8s SA is for Google Cloud Console so the K8s cluster can be managed in GKE. This service account will have cluster-admin role for Google Cloud Marketplace to work. Default is  *google-cloud-console*
-
-* PYTHON_ANTHOS_GENCONFIG: This script is hosted externally and produce an Anthos configuration file for cluster creation with user provided inputs during launch. DO NOT CHANGE default value unless you will host the script in an internal repository
+| OS_DISK_SIZE | n/a | The minimum OS disk size MUST be 128GB, recommended by Google is 256GB |
+| NTNX_CSI_URL | ntnx_csi_url | Nutanix CSI Driver URL. Minimum supported version is 2.3.1 |
+| NTNX_PE_IP | ntnx_pe_ip | The Prism Element VIP address is needed for the CSI plugin to create persistent volumes via the API. This VIP doesn't have to be the one where the Anthos cluster will run. You can choose any VIP of any of your clusters from where you want to get persistent storage |
+| NTNX_PE_PORT | ntnx_pe_port | Prism Element port. Default is *9440* |
+| NTNX_PE_DATASERVICE_IP | ntnx_pe_dataservice_ip | Data service is required to allow iSCSI connectivity between the Kubernetes pods and the volumes created by CSI plugin |
+| NTNX_PE_STORAGE_CONTAINER | ntnx_pe_storage_container | This is the Nutanix Storage Container where the requested Persistent Volume Claims will get their volumes created. You can enable things like compression and deduplication in a Storage Container. The recommendation is to create at least one storage container in Prism Element well identified for Kubernetes usage. This will facilitate the search of persistent volumes when the environment scales |
+| ANTHOS_CLUSTER_NAME | anthos_cluster_name | Anthos cluster name |
+| ANTHOS_VERSION | anthos_version | Anthos cluster version. Supported: 1.6.x (default 1.6.2) - Unsupported: 1.7.0 |
+| ANTHOS_SERVICES_NETWORK | anthos_services_network | This is the network for your services. Preferably do not overlap with other networks. CIDR format: XXX.XXX.XXX.XXX/XX |
+| ANTHOS_PODS_NETWORK | anthos_pods_network | This is the network for your pods. Preferably do not overlap with other networks. CIDR format: XXX.XXX.XXX.XXX/XX | 
+| ANTHOS_CONTROLPLANE_VIP | anthos_controlplane_vip | This is the IP address for Kubernetes API. Format: XXX.XXX.XXX.XXX |
+| ANTHOS_INGRESS_VIP | anthos_ingress_vip | This is the IP address for Kubernetes Ingress. This address MUST be within the load balancing pool. Format: XXX.XXX.XXX.XXX |
+| ANTHOS_LB_ADDRESSPOOL | anthos_lb_addresspool | This is the IP address range for Load Balancing. Format: XXX.XXX.XXX.XXX-YYY.YYY.YYY.YYY |
+| KUBERNETES_SERVICE_ACCOUNT | kubernetes_service_account | This K8s SA is for Google Cloud Console so the K8s cluster can be managed in GKE. This service account will have cluster-admin role for Google Cloud Marketplace to work. Default is  *google-cloud-console* |
+| PYTHON_ANTHOS_GENCONFIG | python_anthos_genconfig | This script is hosted externally and produce an Anthos configuration file for cluster creation with user provided inputs during launch. DO NOT CHANGE default value unless you will host the script in an internal repository |
