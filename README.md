@@ -111,7 +111,7 @@ The characteristics for the Kubernetes cluster are:
 | Calm | Terraform | Description |
 | --- | --- | --- |
 | NTNX_PC_IP | n/a | If you are using a remote Prism Central instance, use the IP address of that instance. This is used to expand the OS disk via PC API |
-| OS_DISK_SIZE | n/a | The minimum OS disk size MUST be 128GB, recommended by Google is 256GB |
+| OS_DISK_SIZE | anthos_worker_vm_config/anthos_control_vm_config/anthos_admin_vm_config | The minimum OS disk size MUST be 128GB, recommended by Google is 256GB |
 | NTNX_CSI_URL | ntnx_csi_url | Nutanix CSI Driver URL. Minimum supported version is 2.3.1 |
 | NTNX_PE_IP | ntnx_pe_ip | The Prism Element VIP address is needed for the CSI plugin to create persistent volumes via the API. This VIP doesn't have to be the one where the Anthos cluster will run. You can choose any VIP of any of your clusters from where you want to get persistent storage |
 | NTNX_PE_PORT | ntnx_pe_port | Prism Element port. Default is *9440* |
