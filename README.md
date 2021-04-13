@@ -126,3 +126,9 @@ The characteristics for the Kubernetes cluster are:
 | ANTHOS_LB_ADDRESSPOOL | anthos_lb_addresspool | This is the IP address range for Load Balancing. Format: XXX.XXX.XXX.XXX-YYY.YYY.YYY.YYY |
 | KUBERNETES_SERVICE_ACCOUNT | kubernetes_service_account | This K8s SA is for Google Cloud Console so the K8s cluster can be managed in GKE. This service account will have cluster-admin role for Google Cloud Marketplace to work. Default is  *google-cloud-console* |
 | PYTHON_ANTHOS_GENCONFIG | python_anthos_genconfig | This script is hosted externally and produce an Anthos configuration file for cluster creation with user provided inputs during launch. DO NOT CHANGE default value unless you will host the script in an internal repository |
+| (credential) | ntnx_pe_username | Username for Prism Element cluster for the CSI plug-in to work |
+| (credential) | ntnx_pe_password | Password for Prism Element cluster |
+| (credential) | google_application_credentials_path | Local path to the GCP service account key in JSON format |
+| (service spec) | subnet_name | Subnet used for Anthos deployment |
+| (service replica count) | amount_of_anthos_worker_vms | Amount of Anthos worker VMs. Changing this value will result in scale-up or scale-down of the cluster |
+| (credential) | admin_vm_username | Username used for Anthos installation. Default: nutanix |
