@@ -2,7 +2,7 @@
 
 ## What to expect
 
-This repo provides two automation methods for deploying Anthos clusters on AHV. You can choose between a Calm blueprint or a Terraform file.
+This repo provides two automation methods for deploying Anthos clusters on AHV. You can choose between a [Calm blueprint](https://github.com/nutanixdev/anthos-on-ahv/tree/main/calm) or a [Terraform file](https://github.com/nutanixdev/anthos-on-ahv/tree/main/terraform).
 
 ## Overview
 
