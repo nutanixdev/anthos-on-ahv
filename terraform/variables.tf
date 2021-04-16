@@ -63,7 +63,7 @@ variable kubernetes_service_account {
 
 variable python_anthos_genconfig {
   type        = string
-  default     = "https://raw.githubusercontent.com/pipoe2h/calm-dsl/anthos-on-ahv/blueprints/anthos-on-ahv/scripts/anthos_generate_config.py"
+  default     = "https://raw.githubusercontent.com/nutanixdev/anthos-on-ahv/main/scripts/anthos_generate_config.py"
   description = "This script is hosted externally and produce an Anthos configuration file for cluster creation with user provided inputs during launch. DO NOT CHANGE default value unless you will host the script in an internal repository"
 }
 

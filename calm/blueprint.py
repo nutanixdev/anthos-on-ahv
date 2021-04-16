@@ -332,7 +332,7 @@ class Default(Profile):
     ]
 
     PYTHON_ANTHOS_GENCONFIG = Variable.Simple.string(
-        "https://raw.githubusercontent.com/pipoe2h/calm-dsl/anthos-on-ahv/blueprints/anthos-on-ahv/scripts/anthos_generate_config.py",
+        "https://raw.githubusercontent.com/nutanixdev/anthos-on-ahv/main/scripts/anthos_generate_config.py",
         name="PYTHON_ANTHOS_GENCONFIG",
         label="Python Parser URL",
         description="""This script is hosted externally and produce an Anthos configuration 
