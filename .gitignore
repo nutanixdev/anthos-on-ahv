@@ -6,6 +6,7 @@
 **/.terraform
 **/.DS_Store
 **/.terraform.tfstate.lock.info
+**/.terraform.lock.hcl
 **/*id_rsa*
 **/org_scripts
 **/*.txt

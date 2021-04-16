@@ -104,6 +104,21 @@ variable ntnx_pe_password {
   description = "Prism Element password. Required for CSI installation"
 }
 
+variable ntnx_pc_ip {
+  type        = string
+  description = "Prism Central IP address. Required for provider"
+}
+
+variable ntnx_pc_username {
+  type        = string
+  description = "Prism Central username. Required for provider"
+}
+
+variable ntnx_pc_password {
+  type        = string
+  description = "Prism Central password. Required for provider"
+}
+
 variable google_application_credentials_path {
   type        = string
   description = "local path to the GKE credential json."
