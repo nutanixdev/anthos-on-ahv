@@ -52,21 +52,21 @@ This method is for using the *blueprint.json* file available in the [Calm commun
 
 ## Using DSL
 
-For DSL you must clone the repository and use the branch *anthos-on-ahv*. Also, make sure your DSL is initialized beforehand, if you need help with this refer to this [post series](https://www.nutanix.dev/calm-dsl)
+Make sure your DSL is initialized beforehand, if you need help with this refer to this [post series](https://www.nutanix.dev/calm-dsl)
 
-```terminal
-git clone https://github.com/nutanixdev/anthos-on-ahv.git
+1. Clone this repo
 
-git checkout anthos-on-ahv
-```
+    ```terminal
+    git clone https://github.com/nutanixdev/anthos-on-ahv.git
+    ```
 
-1. Move to blueprint directory
+2. Move to blueprint directory
 
     ```terminal
     cd calm-dsl/blueprints/anthos-on-ahv
     ```
 
-2. Create the required credentials
+3. Create the required credentials
 
     ```terminal
     mkdir -p .local/secrets
@@ -92,25 +92,25 @@ git checkout anthos-on-ahv
     echo "password" > .local/secrets/pc_password
     ```
 
-3. (Optional) Update default values for [launch variables](##variables). You can find the variables in *class Default(Profile):* section
+4. (Optional) Update default values for [launch variables](##variables). You can find the variables in *class Default(Profile):* section
 
     ```terminal
     vi blueprint.py
     ```
 
-4. Create blueprint
+5. Create blueprint
 
     ```terminal
     calm create bp blueprint.py
     ```
 
-5. Launch it. The complete deployment process takes about an hour.
+6. Launch it. The complete deployment process takes about an hour.
 
     ```terminal
     calm create app -f blueprint.py
     ```
 
-6. Once deployed, the cluster is registered in Anthos but GKE is not logged in until you use the token for the service account created in Kubernetes. From your computer terminal run the following commands copying the token and using it in the GKE console (the service account name may vary depending if you changed the default value):
+7. Once deployed, the cluster is registered in Anthos but GKE is not logged in until you use the token for the service account created in Kubernetes. From your computer terminal run the following commands copying the token and using it in the GKE console (the service account name may vary depending if you changed the default value):
 
     ```terminal
     SECRET_NAME=$(kubectl get serviceaccount google-cloud-console -o jsonpath='{$.secrets[0].name}')
