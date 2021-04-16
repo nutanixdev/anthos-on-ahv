@@ -89,6 +89,44 @@ In this folder you will find all the necessary to deploy an Anthos cluster on AH
 
 * Scale Out/In: You can scale out/in your worker nodes pool
 
+    1. Update *amount_of_anthos_worker_vms* in the *terraform.tfvars* with the new number of worker nodes
+
+    2. Apply with Terraform to change the deployment and confirm
+
+        ```terminal
+        terraform apply
+        [...]
+        yes
+        ```
+
 * Upgrade Anthos: You can upgrade the Anthos cluster to newer versions. Be aware on supported vs unsupported versions
 
+    1. Update *anthos_version* in the *terraform.tfvars* with the new Anthos cluster version
+
+    2. Apply with Terraform to change the deployment and confirm
+
+        ```terminal
+        terraform apply
+        [...]
+        yes
+        ```
+
 * Decommissioning: When deleting an Anthos cluster, it will get cleaned up from Anthos portal as well
+
+## Testing
+
+It includes the Terraform's Testing Framework. You can easily make this part of your CI/CD pipelines and make sure this automation works as expected.
+
+1. Move into the test directory
+
+    ```terminal
+    cd test
+    ```
+
+2. Make sure to have the terraform.tfvars file in the terraform folder
+
+3. Run
+
+    ```terminal
+    go test -v -timeout 0  --run "TestTerraform_"
+    ```
