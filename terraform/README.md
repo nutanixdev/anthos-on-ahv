@@ -68,20 +68,27 @@ In this folder you will find all the necessary to deploy an Anthos cluster on AH
 
 7. Once deployed, the cluster is registered in Anthos but GKE is not logged in until you use the token for the service account created in Kubernetes.
 
-* Retrieve the KUBECONFIG with the command available in the output and set the environment variable KUBECONFIG
+    * Retrieve the KUBECONFIG with the command available in the output and set the environment variable KUBECONFIG
 
-    ```terminal
-    scp -o "StrictHostKeyChecking no" -i <SSH key filename> <username>@<adminVm IP>:/home/<username>/baremetal/bmctl-workspace/<cluster name>/<cluster name>-kubeconfig .
-    ```
+        ```terminal
+        scp -o "StrictHostKeyChecking no" -i <SSH key filename> <username>@<adminVm IP>:/home/<username>/baremetal/bmctl-workspace/<cluster name>/<cluster name>-kubeconfig .
+        ```
 
-    ```terminal
-    export KUBECONFIG=<cluster name>-kubeconfig
-    ```
+        ```terminal
+        export KUBECONFIG=<cluster name>-kubeconfig
+        ```
 
-* Copy the token and use it in the GKE console (the service account name may vary depending if you changed the default value):
+    * Copy the token and use it in the GKE console (the service account name may vary depending if you changed the default value):
 
-    ```terminal
-    SECRET_NAME=$(kubectl get serviceaccount google-cloud-console -o jsonpath='{$.secrets[0].name}')
-    kubectl get secret ${SECRET_NAME} -o jsonpath='{$.data.token}' | base64 --decode
-    ```
+        ```terminal
+        SECRET_NAME=$(kubectl get serviceaccount google-cloud-console -o jsonpath='{$.secrets[0].name}')
+        kubectl get secret ${SECRET_NAME} -o jsonpath='{$.data.token}' | base64 --decode
+        ```
 
+## Day-2 Operations
+
+* Scale Out/In: You can scale out/in your worker nodes pool
+
+* Upgrade Anthos: You can upgrade the Anthos cluster to newer versions. Be aware on supported vs unsupported versions
+
+* Decommissioning: When deleting an Anthos cluster, it will get cleaned up from Anthos portal as well
