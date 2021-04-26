@@ -50,6 +50,12 @@ The characteristics for the Kubernetes cluster are:
 
 * Decommission Anthos cluster: yes
 
+## Architecture
+
+This diagram represents a typical hybrid model deployment for Anthos on AHV. Other Anthos deployment models are supported too.
+
+![Anthos clusters on AHV hybrid model architecture](images/Anthos-clusters-on-AHV-Hybrid-Architecture.png)
+
 ## Prerequisites
 
 * Nutanix:
