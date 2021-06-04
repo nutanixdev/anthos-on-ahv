@@ -134,7 +134,7 @@ This diagram represents a typical hybrid model deployment for Anthos on AHV. Oth
 | PYTHON_ANTHOS_GENCONFIG | python_anthos_genconfig | This script is hosted externally and produce an Anthos configuration file for cluster creation with user provided inputs during launch. DO NOT CHANGE default value unless you will host the script in an internal repository |
 | (credential) | ntnx_pe_username | Username for Prism Element cluster for the CSI plug-in to work |
 | (credential) | ntnx_pe_password | Password for Prism Element cluster |
-| (credential) | google_application_credentials_path | Local path to the GCP service account key in JSON format |
+| (credential) | google_application_credentials_path | Local path to the GCP service account JSON file |
 | (service spec) | subnet_name | Subnet used for Anthos deployment |
 | (service replica count) | amount_of_anthos_worker_vms | Amount of Anthos worker VMs. Changing this value will result in scale-up or scale-down of the cluster |
 | (credential) | admin_vm_username | Username used for Anthos installation. Default: nutanix |

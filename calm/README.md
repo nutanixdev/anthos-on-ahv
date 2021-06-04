@@ -35,7 +35,7 @@ This method is for using the *blueprint.json* file available in the [Calm commun
 
     * CRED_PC: Configure username and password with a user that has *Create/Update VM* role in the Prism Central instance responsible for the virtual machines. This is required to expand the virtual disk via API
 
-    * CRED_GCLOUD: This is the GCP Service Account name you have created with the format *`name`*@*`project`*.iam.gserviceaccount.com. Upload the JSON key that was generated as part of the GCP service account creation
+    * CRED_GCLOUD: This is the GCP Service Account name you have created with the format *`name`*@*`project`*.iam.gserviceaccount.com. Upload the JSON file that was generated as part of the GCP service account creation. Click the upload button in the *SSH Private Key* and select your JSON file.
 
 5. Default Application Profile variables
 
