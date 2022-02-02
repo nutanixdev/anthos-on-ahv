@@ -2,12 +2,16 @@
 source ~/variables.sh
 echo '======Create Anthos cluster======'
 echo "invoking $ANTHOS_CLUSTER_NAME"
+
+# Install Python 3
+sudo dnf install -y python3
+
 # Install PyYAML
-sudo python2 -m pip install pyyaml
+sudo python3 -m pip install pyyaml
 
 # Create Anthos configuration file
 cd ~/baremetal
-curl -s $PYTHON_ANTHOS_GENCONFIG | python2
+curl -s $PYTHON_ANTHOS_GENCONFIG | python3
 
 # Create Anthos Kubernetes cluster
 echo "Creating Anthos cluster. This can take about 45 minutes depending on Internet connectivity"
