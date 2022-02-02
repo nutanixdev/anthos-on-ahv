@@ -1,5 +1,13 @@
 # Calm blueprint for Anthos clusters on AHV
 
+---
+
+## NOTE
+
+The CentOS 8.2.2004 image used in this repo is EOL since December 31, 2021. The automation scripts in this repo use CentOS vault repo to download the packages (archived/unsupported packages)
+
+---
+
 ## What to expect
 
 With this folder you can generate a Calm blueprint using DSL or just upload a compiled blueprint in JSON format directly into Calm.

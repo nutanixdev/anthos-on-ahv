@@ -1,5 +1,13 @@
 # Anthos clusters on AHV
 
+---
+
+## NOTE
+
+The CentOS 8.2.2004 image used in this repo is EOL since December 31, 2021. The automation scripts in this repo use CentOS vault repo to download the packages (archived/unsupported packages)
+
+---
+
 ## What to expect
 
 This repo provides two automation methods for deploying Anthos clusters on AHV. You can choose between a [Calm blueprint](https://github.com/nutanixdev/anthos-on-ahv/tree/main/calm) or a [Terraform file](https://github.com/nutanixdev/anthos-on-ahv/tree/main/terraform).
