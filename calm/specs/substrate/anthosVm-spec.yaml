@@ -7,7 +7,7 @@ resources:
     device_properties:
       device_type: DISK
       disk_address:
-        adapter_type: PCI
+        adapter_type: SCSI
         device_index: 0
   memory_size_mib: 32768 # Minimum 32 GB / recommended 64 GB
   num_sockets: 4 # Minimum 4 / recommended 8
@@ -15,7 +15,7 @@ resources:
   boot_config:
     boot_device:
       disk_address:
-        adapter_type: PCI
+        adapter_type: SCSI
         device_index: 0
   guest_customization:
     cloud_init:
@@ -34,5 +34,5 @@ resources:
     nic_type: NORMAL_NIC
     subnet_reference:
       kind: subnet
-      name: dnd-demo
-      uuid: 92b02b9e-b316-4503-94fb-a90bf3fede8b
+      name: desktops
+      uuid: 0e26c135-d478-428e-9fb8-22c0acfa5f3a
