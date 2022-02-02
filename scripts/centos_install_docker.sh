@@ -21,6 +21,9 @@ sudo dnf remove docker \
   docker-logrotate \
   docker-engine
 
+# Use CentOS 8 Vault repo due to CentOS 8 EOL on December 31, 2021
+sudo sed -i -e "s/^mirrorlist/#mirrorlist/g" -e "s/^#baseurl/baseurl/g" -e "s/mirror./vault./g" /etc/yum.repos.d/*.repo
+
 # Install iptables but disable it (https://github.com/moby/moby/issues/41799 & https://cloud.google.com/compute/docs/troubleshooting/known-issues)
 sudo dnf install -y iptables-services
 sudo chkconfig iptables off
