@@ -87,7 +87,7 @@ func TestTerraform_Anthos_UpgradeCluster(t *testing.T) {
 	defer terraform.Destroy(t, terraformOptions)
 	createAnthosCluster(t, terraformOptions, false)
 	basicClusterTestHelper(t, terraformOptions, 0, 0, 0)
-	terraformOptions.Vars["anthos_version"] = "1.7.0"
+	terraformOptions.Vars["anthos_version"] = "1.10.0"
 	assertPlanResult(t, terraformOptions, 2, 0, 2)
 	terraform.InitAndApply(t, terraformOptions)
 	basicClusterTestHelper(t, terraformOptions, 0, 0, 0)

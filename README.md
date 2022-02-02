@@ -16,15 +16,15 @@ This repo provides two automation methods for deploying Anthos clusters on AHV. 
 
 The characteristics for the Kubernetes cluster are:
 
-* Anthos model: [bare metal](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/concepts/about-bare-metal)
+* Anthos model: [bare metal](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.9/concepts/about-bare-metal)
 
 * Anthos versions:
 
-  * Supported: [1.6.x](https://cloud.google.com/anthos/docs/resources/partner-platforms#nutanix)
+  * Supported: [1.6.x, 1.7.x, 1.8.x and 1.9.x](https://cloud.google.com/anthos/docs/resources/partner-platforms#nutanix)
 
-  * Unsupported: 1.7.0
+  * Unsupported: 1.10.x
 
-* Type: hybrid - <https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/installing/install-prep#hybrid_cluster_deployment>
+* Type: hybrid - <https://cloud.google.com/anthos/clusters/docs/bare-metal/1.9/installing/install-prep#hybrid_cluster_deployment>
 
 * Number of virtual machines: 6 (Total resources: 24 vCPU / 192 GB memory / 768 GB storage )
 
@@ -38,7 +38,7 @@ The characteristics for the Kubernetes cluster are:
 
 * High availability: yes
 
-* Load balancing: yes ([bundled](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.6/installing/load-balance))
+* Load balancing: yes ([bundled](https://cloud.google.com/anthos/clusters/docs/bare-metal/1.9/installing/load-balance))
 
 * Ingress: yes
 
@@ -132,7 +132,7 @@ This diagram represents a typical hybrid model deployment for Anthos on AHV. Oth
 | NTNX_PE_DATASERVICE_IP | ntnx_pe_dataservice_ip | Data service is required to allow iSCSI connectivity between the Kubernetes pods and the volumes created by CSI plugin |
 | NTNX_PE_STORAGE_CONTAINER | ntnx_pe_storage_container | This is the Nutanix Storage Container where the requested Persistent Volume Claims will get their volumes created. You can enable things like compression and deduplication in a Storage Container. The recommendation is to create at least one storage container in Prism Element well identified for Kubernetes usage. This will facilitate the search of persistent volumes when the environment scales |
 | ANTHOS_CLUSTER_NAME | anthos_cluster_name | Anthos cluster name |
-| ANTHOS_VERSION | anthos_version | Anthos cluster version. Supported: 1.6.x (default 1.6.2) - Unsupported: 1.7.0 |
+| ANTHOS_VERSION | anthos_version | Anthos cluster version. Supported: 1.6.x, 1.7.x, 1.8.x and 1.9.x (default 1.9.4) - Unsupported: 1.10.x |
 | ANTHOS_SERVICES_NETWORK | anthos_services_network | This is the network for your services. Preferably do not overlap with other networks. CIDR format: XXX.XXX.XXX.XXX/XX |
 | ANTHOS_PODS_NETWORK | anthos_pods_network | This is the network for your pods. Preferably do not overlap with other networks. CIDR format: XXX.XXX.XXX.XXX/XX | 
 | ANTHOS_CONTROLPLANE_VIP | anthos_controlplane_vip | This is the IP address for Kubernetes API. Format: XXX.XXX.XXX.XXX |

@@ -413,9 +413,9 @@ class Default(Profile):
     )
 
     ANTHOS_VERSION = Variable.Simple.string(
-        "1.6.2",
+        "1.9.4",
         name="ANTHOS_VERSION",
-        description="The only supported versions are 1.6.x, 1.7.0 is not supported yet but can be tested.",
+        description="The supported versions are 1.6.x, 1.7.x, 1.8.x, and 1.9.x. Version 1.10.x is not supported yet but can be tested.",
         regex="^(\\d+\\.)?(\\d+\\.)?(\\*|\\d+)$",
         validate_regex=True,
         label="Anthos cluster version",
@@ -538,7 +538,7 @@ class Default(Profile):
         ANTHOS_VERSION = Variable.Simple.string(
             "",
             name="ANTHOS_VERSION",
-            description="The only supported versions are 1.6.x, 1.7.0 is not supported yet but can be tested.",
+            description="The supported versions are 1.6.x, 1.7.x, 1.8.x, and 1.9.x. Version 1.10.x is not supported yet but can be tested.",
             regex="^(\\d+\\.)?(\\d+\\.)?(\\*|\\d+)$",
             validate_regex=True,
             label="Anthos cluster version",

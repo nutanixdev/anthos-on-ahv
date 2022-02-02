@@ -1,7 +1,7 @@
 variable anthos_version {
   type        = string
   description = "Anthos cluster version"
-  default     = "1.6.2"
+  default     = "1.9.4"
 }
 variable anthos_cluster_name {
   type        = string
