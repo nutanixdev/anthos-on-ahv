@@ -1,5 +1,13 @@
 # Terraform for Anthos clusters on AHV
 
+---
+
+## NOTE
+
+The CentOS 8.2.2004 image used in this repo is EOL since December 31, 2021. The automation scripts in this repo use CentOS vault repo to download the packages (archived/unsupported packages)
+
+---
+
 ## What to expect
 
 In this folder you will find all the necessary to deploy an Anthos cluster on AHV with the additional functionalities for upgrading, scaling and decommissioning a cluster.
