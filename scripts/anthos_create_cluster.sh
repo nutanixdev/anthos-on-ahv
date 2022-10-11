@@ -7,7 +7,7 @@ echo "invoking $ANTHOS_CLUSTER_NAME"
 sudo dnf install -y python3
 
 # Install PyYAML
-sudo python3 -m pip install pyyaml
+sudo python3 -m pip install pyyaml==3.12
 
 # Create Anthos configuration file
 cd ~/baremetal

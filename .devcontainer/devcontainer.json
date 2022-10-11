@@ -5,15 +5,16 @@
 		"context": "..",
 		// Update 'VARIANT' to pick a Python version. Rebuild the container 
 		// if it already exists to update. Available variants: 3, 3.6, 3.7, 3.8 
-		"args": { "VARIANT": "3.7" }
+		"args": {
+			"VARIANT": "3.7"
+		}
 	},
-
 	"containerEnv": {
 		"CALM_DSL_LOG_LEVEL": "INFO"
 	},
-
+	"initializeCommand": "mkdir -p .calm",
 	// Set *default* container specific settings.json values on container create.
-	"settings": { 
+	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
@@ -29,24 +30,19 @@
 		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
 		"python.testing.pytestPath": "/usr/local/py-utils/bin/pytest"
 	},
-
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-python.python"
 	],
-
 	// 
 	"mounts": [
 		"source=${localWorkspaceFolder}/.calm,target=/root/.calm,type=bind,consistency=delegated",
 		"source=${localEnv:HOME}/.ssh/id_rsa,target=/root/.ssh/id_rsa,type=bind,consistency=cached"
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [9000],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "pip3 install -r requirements.txt ; pip3 install --upgrade requests"
-
 	// Comment out to connect as root instead.
 	// "remoteUser": "vscode"
 }

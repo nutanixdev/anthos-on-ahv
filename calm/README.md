@@ -71,7 +71,7 @@ Make sure your DSL is initialized beforehand, if you need help with this refer t
 2. Move to blueprint directory
 
     ```terminal
-    cd calm-dsl/blueprints/anthos-on-ahv
+    cd anthos-on-ahv/calm
     ```
 
 3. Create the required credentials
@@ -80,7 +80,7 @@ Make sure your DSL is initialized beforehand, if you need help with this refer t
     mkdir -p .local/secrets
 
     # GCP Service Account
-    echo "name@project..iam.gserviceaccount.com" > .local/secrets/gcloud_account
+    echo "name@project.iam.gserviceaccount.com" > .local/secrets/gcloud_account
     echo """{
         JSON payload
     }""" > .local/secrets/gcloud_key
@@ -109,7 +109,7 @@ Make sure your DSL is initialized beforehand, if you need help with this refer t
 5. Create blueprint
 
     ```terminal
-    calm create bp blueprint.py
+    calm create bp -f blueprint.py
     ```
 
 6. Launch it. The complete deployment process takes about an hour.
