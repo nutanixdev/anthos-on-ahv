@@ -1,13 +1,6 @@
 import os
 
 import yaml
-from yaml import dump, load
-
-try:
-    from yaml import CDumper as Dumper
-    from yaml import CLoader as Loader
-except ImportError:
-    from yaml import Dumper, Loader
 
 TEMPLATE_PATH = os.getenv("ANTHOS_TEMPLATE_PATH")
 SSH_KEY = os.getenv("ANTHOS_SSH_KEY")

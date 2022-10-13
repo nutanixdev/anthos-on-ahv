@@ -9,7 +9,7 @@ metadata:
   name: cloud-console-reader
 rules:
 - apiGroups: [""]
-  resources: ["nodes", "persistentvolumes"]
+  resources: ["nodes", "persistentvolumes", "pods"]
   verbs: ["get", "list", "watch"]
 - apiGroups: ["storage.k8s.io"]
   resources: ["storageclasses"]
@@ -24,3 +24,18 @@ kubectl create clusterrolebinding ${KSA_NAME}-reader \
 
 kubectl create clusterrolebinding ${KSA_NAME}-admin \
 --clusterrole cluster-admin --serviceaccount default:${KSA_NAME}
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "${KSA_NAME}"
+  annotations:
+    kubernetes.io/service-account.name: "${KSA_NAME}"
+type: kubernetes.io/service-account-token
+EOF
+
+until [[ $(kubectl get -o=jsonpath="{.data.token}" "secret/${KSA_NAME}") ]]; do
+  echo "waiting for token..." >&2;
+  sleep 1;
+done

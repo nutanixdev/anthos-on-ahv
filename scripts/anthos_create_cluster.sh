@@ -1,6 +1,6 @@
 # ============== DO NO CHANGE AFTER THIS ===============
 source ~/variables.sh
-echo '======Create Anthos cluster======'
+echo 'Creating Anthos cluster ...'
 echo "invoking $ANTHOS_CLUSTER_NAME"
 
 # Install Python 3
